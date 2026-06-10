@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "YT Downloader -- V1",
+  "version": "1.0",
+  "description": "Extracts YouTube video data.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ]
+}
