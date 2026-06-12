@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("title").innerText = data.title;
       document.getElementById("channel").innerText = "Channel: " + data.channel;
       document.getElementById("videoId").innerText = "Video ID: " + data.videoId;
+      document.getElementById("thumbnail").src = data.thumbnailUrl;
     });
 
   } else {
@@ -25,9 +26,12 @@ function scrapeYouTubeData() {
   const videoId = new URL(window.location.href)
     .searchParams
     .get("v");
+  const thumbnailUrl =
+    `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
   return {
     title: titleNode ? titleNode.innerText : document.title,
     channel: channelNode ? channelNode.innerText : "Channel not found",
-    videoId: videoId
+    videoId: videoId,
+    thumbnailUrl: thumbnailUrl
   };
 }
