@@ -13,6 +13,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("channel").innerText = "Channel: " + data.channel;
       document.getElementById("videoId").innerText = "Video ID: " + data.videoId;
       document.getElementById("thumbnail").src = data.thumbnailUrl;
+      const btn = document.getElementById("copyURLBtn");
+      btn.addEventListener("click", () => {
+      navigator.clipboard.writeText(tab.url);
+      btn.innerText = "Copied!";
+      setTimeout(() => {
+      btn.innerText = "Copy URL";
+    }, 1500);
+});
+      
     });
 
   } else {
@@ -28,6 +37,7 @@ function scrapeYouTubeData() {
     .get("v");
   const thumbnailUrl =
     `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    
   return {
     title: titleNode ? titleNode.innerText : document.title,
     channel: channelNode ? channelNode.innerText : "Channel not found",

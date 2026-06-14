@@ -26,9 +26,27 @@
     font-size: 15px;
     opacity: 0.8;
     color: #b2b2b2;
+    padding-bottom: 8px;
 }
 #thumbnail {
     border-radius: 10px;
     margin-bottom: 8px;
     object-fit: cover;
+}
+#copyURLBtn {
+    background: transparent;
+    color: #f4e88a;
+
+    border: 1px solid #f4e88a;
+    border-radius: 8px;
+
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+#copyURLBtn:hover {
+    background: #f4e88a;
+    color: #0f0f0f;
+    cursor: pointer;
+    transform:translateY(-1px);
 }
